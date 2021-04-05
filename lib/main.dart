@@ -8,9 +8,18 @@ import 'package:desktop_window/desktop_window.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:fullscreen/fullscreen.dart';
 import 'package:desktop_window_utils/desktop_window_utils.dart';
+import 'package:bitsdojo_window/bitsdojo_window.dart';
 
 void main() {
   runApp(MyApp());
+
+  doWhenWindowReady(() {
+    final initialSize = Size(1920, 1080);
+    appWindow.minSize = initialSize;
+    appWindow.size = initialSize;
+    appWindow.alignment = Alignment.center;
+    appWindow.show();
+  });
 }
 
 class MyApp extends StatelessWidget {
